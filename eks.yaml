@@ -1,0 +1,12 @@
+kind: eksctl.io/v1alpha5
+apiVersion: ClusterConfig
+
+metadata: 
+  name: expense-1
+  region: us-east-1
+
+manageNodegroups:     # Here the node groups will also be maintained by aws as the eks master is also maintained
+- name: expense
+  instanceType: m5.large
+  desiredCapacity: 3
+  spot: true
